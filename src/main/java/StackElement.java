@@ -1,4 +1,6 @@
 /**
+ * the purpose of this class is to delegate to the element, so as in to able to create multiple types,premitive type
+ * without the need to change the whole code over and over again--> this class is generic of type T
  * @Author Kevin Mukuna
  * @param <T>, the type of the value being stored in the stack
  */
