@@ -1,105 +1,82 @@
+public class Stack<T>{
 
-import java.util.Arrays;
+    private int size;
+    StackElement<T> top;
 
-public class Stack {
-
-    private final String[] stackArray;
-    private final int stackSize;
-
-    // Sets stack as empty
-
-    private int topOfStack = -1;
-
-    Stack(int size){
-
-        stackSize = size;
-
-        stackArray = new String[size];
-
-        // Assigns the value of -1 to every value in the array
-        // so I control what gets printed to screen
-
-        Arrays.fill(stackArray, "-1");
-
+    // stack functional method
+    public Stack() {
+        size = -1;
+        top = null;
     }
 
-    public void push(String input){
-        if(topOfStack+1 < stackSize){
-            topOfStack++;
-            stackArray[topOfStack] = input;
-        }else System.out.println("Sorry But the Stack is Full");
+    public void push(T valuePassed) {
+        top = new StackElement<>(valuePassed, top);
+        size++;
 
-        displayTheStack();
-        System.out.println("PUSH " + input + " Was Added to the Stack\n");
-
+        /* this can also be written this way
+            StackElement<T> newStackElement = new StackElement<>(valuePassed, top);
+            top = newStackElement;
+            size++;
+         */
     }
 
-    public String pop(){
-        if(topOfStack >= 0){
-            displayTheStack();
-            System.out.println("POP " + stackArray[topOfStack] + " Was Removed From the Stack\n");
-
-            // Just like in memory an item isn't deleted, but instead is just not available
-            stackArray[topOfStack] = "-1"; // Assigns -1 so the value won't appear
-            return stackArray[topOfStack--];
-        }else{
-            displayTheStack();
-            System.out.println("Sorry But the Stack is Empty");
-            return "-1";
+    public T pop() {
+        StackElement<T> previousTop = top;
+        if (!isStackEmpty()){
+            return errorMesage();
         }
+        top = top.getnext();
+        return previousTop.getvalue();
     }
 
-    public String peek(){
-        displayTheStack();
-        System.out.println("PEEK " + stackArray[topOfStack] + " Is at the Top of the Stack\n");
-        return stackArray[topOfStack];
-    }
+    public T top() {
 
-    public void pushMany(String multipleValues){
-        String[] tempString = multipleValues.split(" ");
-        for (String s : tempString) {
-            push(s);
+        if (!isStackEmpty()){
+            return errorMesage();
         }
+        return top.getvalue();
     }
 
-    public void popAll(){
-        for(int i = topOfStack; i >= 0; i--){
+    public void init() {
+        size = 0;
+        top = null;
+    }
+
+    public void show() {
+
+        do {
+            System.out.println(top());
             pop();
+            size--;
         }
+        while ( isStackEmpty() );
     }
 
-    public void popDisplayAll(){
-        StringBuilder theReverse = new StringBuilder();
-        for(int i = topOfStack; i >= 0; i--){
-            theReverse.append(stackArray[i]);
-        }
-        System.out.println("The Reverse: " + theReverse);
-        popAll();
+    // extra method
+    public boolean isStackEmpty() {
+        return size > -1;
     }
 
-    public void displayTheStack(){
-        for(int n = 0; n < 61; n++)System.out.print("-");
-        System.out.println();
-        for(int n = 0; n < stackSize; n++){
-            System.out.format("| %2s "+ " ", n);
-        }
+    public T errorMesage (){
+        return (T) "Sorry Stack is Empty";
+    }
 
-        System.out.println("|");
+    public static void main(String[] args){
+        ST<String> newStringStack = new ST<>();
+        newStringStack.push("Kevin ");
+        newStringStack.push("Mukuna ");
+        newStringStack.push("Junior ");
+        newStringStack.push("Patrick ");
+//        newStringStack.pop();
+//        System.out.println(newStringStack.top());
+//        newStringStack.show();
+//        newStringStack.pop();
+//        System.out.println(newStringStack.top());
+//        System.out.println(newStringStack.pop());
+        newStringStack.show();
 
-        for(int n = 0; n < 61; n++)System.out.print("-");
 
-        System.out.println();
 
-        for(int n = 0; n < stackSize; n++){
-            if(stackArray[n].equals("-1")) System.out.print("|     ");
-            else System.out.printf("| %2s "+ " ", stackArray[n]);
-        }
-
-        System.out.println("|");
-
-        for(int n = 0; n < 61; n++)System.out.print("-");
-
-        System.out.println();
 
     }
 }
