@@ -62,19 +62,19 @@ public class Stack<T>{
     }
 
     public static void main(String[] args){
-        ST<String> newStringStack = new ST<>();
-        newStringStack.push("Kevin ");
-        newStringStack.push("Mukuna ");
-        newStringStack.push("Junior ");
-        newStringStack.push("Patrick ");
-//        newStringStack.pop();
-//        System.out.println(newStringStack.top());
+//        ST<String> newStringStack = new ST<>();
+//        newStringStack.push("Kevin ");
+//        newStringStack.push("Mukuna ");
+//        newStringStack.push("Junior ");
+//        newStringStack.push("Patrick ");
+////        newStringStack.pop();
+////        System.out.println(newStringStack.top());
+////        newStringStack.show();
+////        newStringStack.pop();
+////        System.out.println(newStringStack.top());
+////        System.out.println(newStringStack.pop());
 //        newStringStack.show();
-//        newStringStack.pop();
-//        System.out.println(newStringStack.top());
-//        System.out.println(newStringStack.pop());
-        newStringStack.show();
-
+//
 
 
 
