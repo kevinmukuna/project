@@ -26,6 +26,7 @@ public class TestStack {
     @Test
     @DisplayName("testing the init method")
     void testingTheInitMethod() {
-        fail("not implemented");
+        moduleCodes.init();
+        assertTrue(moduleCodes.isStackEmpty());
     }
 }
