@@ -67,8 +67,7 @@ public class Stack<T>{
      * initialisation of the stack method
      */
     public void init() {
-        size = 0;
-        top = null;
+        new Stack<>();
     }
 
     /**
@@ -107,7 +106,7 @@ public class Stack<T>{
      * @return size of the stack
      */
     public int getSize() {
-        return size;
+        return size+1;
     }
 
 
