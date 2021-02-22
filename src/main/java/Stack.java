@@ -5,7 +5,7 @@
  * last to come out
  * @param <T> the T stands for type
  */
-public class Stack<T>{
+public class Stack<T> implements StackInterface<T>{
     /**
      * @see #size --> this referes to the size of the stack. it initiated to zero upon creation.
      * @see StackElement --> this holds the stack of whatever object we decide to pass into the array.
