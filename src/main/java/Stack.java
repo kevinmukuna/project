@@ -12,17 +12,11 @@ public class Stack<T>{
     public void push(T valuePassed) {
         top = new StackElement<>(valuePassed, top);
         size++;
-
-        /* this can also be written this way
-            StackElement<T> newStackElement = new StackElement<>(valuePassed, top);
-            top = newStackElement;
-            size++;
-         */
     }
 
     public T pop() {
         StackElement<T> previousTop = top;
-        if (!isStackEmpty()){
+        if (isStackEmpty()){
             return errorMesage();
         }
         top = top.getnext();
@@ -31,7 +25,7 @@ public class Stack<T>{
 
     public T top() {
 
-        if (!isStackEmpty()){
+        if (isStackEmpty()){
             return errorMesage();
         }
         return top.getvalue();
@@ -43,37 +37,44 @@ public class Stack<T>{
     }
 
     public void show() {
-
-        do {
-            System.out.println(top());
-            pop();
-            size--;
+        StackElement<T> stackCOpy = top;
+        while (stackCOpy.nextValue != null ){
+            System.out.println(stackCOpy.valuePassed);
+            stackCOpy = stackCOpy.nextValue;
         }
-        while ( isStackEmpty() );
+        System.out.println(stackCOpy.valuePassed);
     }
 
     // extra method
     public boolean isStackEmpty() {
-        return size > -1;
+        return size <= -1;
     }
 
     public T errorMesage (){
         return (T) "Sorry Stack is Empty";
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public static void main(String[] args){
-        ST<String> newStringStack = new ST<>();
+        Stack<String> newStringStack = new Stack<>();
         newStringStack.push("Kevin ");
         newStringStack.push("Mukuna ");
         newStringStack.push("Junior ");
         newStringStack.push("Patrick ");
-//        newStringStack.pop();
-//        System.out.println(newStringStack.top());
-//        newStringStack.show();
-//        newStringStack.pop();
-//        System.out.println(newStringStack.top());
-//        System.out.println(newStringStack.pop());
         newStringStack.show();
+        System.out.println();
+        newStringStack.pop();
+
+        newStringStack.show();
+        newStringStack.pop();
+        System.out.println();
+
+        newStringStack.show();
+        newStringStack.pop();
+        System.out.println();
 
 
 
