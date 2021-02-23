@@ -46,4 +46,10 @@ public class TestStack {
         moduleCodes.pop();
         assertEquals("CS3519", moduleCodes.top());
     }
+    
+    @Test
+    @DisplayName("testing for the show method")
+    void testingForTheShowMethod() {
+        fail("not implemented");
+    }
 }
