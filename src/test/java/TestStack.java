@@ -35,5 +35,9 @@ public class TestStack {
         assertEquals(0, moduleCodes.getSize());
     }
 
-
+    @Test
+    @DisplayName("tseting for push method")
+    void tsetingForPushMethod() {
+        fail("not implemented");
+    }
 }
