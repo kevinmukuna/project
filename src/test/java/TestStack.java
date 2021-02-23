@@ -42,6 +42,8 @@ public class TestStack {
     @Test
     @DisplayName("testing for the POP functionality")
     void testingForThePOPFunctionality() {
-        fail("not implemented");
+        testingForPushMethod();
+        moduleCodes.pop();
+        assertEquals("CS3519", moduleCodes.top());
     }
 }
