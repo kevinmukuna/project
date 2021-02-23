@@ -32,7 +32,7 @@ public class TestStack {
     @Test
     @DisplayName("get the current size of the stack")
     void getTheCurrentSizeOfTheStack() {
-        fail("not implemented");
+        assertEquals(0, moduleCodes.getSize());
     }
 
 
