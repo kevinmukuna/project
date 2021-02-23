@@ -50,6 +50,7 @@ public class TestStack {
     @Test
     @DisplayName("testing for the show method")
     void testingForTheShowMethod() {
-        fail("not implemented");
+        testingForPushMethod();
+        moduleCodes.show();
     }
 }
