@@ -36,22 +36,24 @@ public class TestStack {
     }
 
     @Test
-    @DisplayName("tseting for push method")
-    void tsetingForPushMethod() {
-        moduleCodes.push("CS3305 ");
-        moduleCodes.push("CS3306 ");
-        moduleCodes.push("CS3506 ");
-        moduleCodes.push("CS3506 ");
-        moduleCodes.push("CS3514 ");
-        moduleCodes.push("CS3516 ");
-        moduleCodes.push("CS3519 ");
-        moduleCodes.push("CS1117 ");
+    @DisplayName("testing for push method")
+    void testingForPushMethod() {
+        moduleCodes.push("CS3305");
+        moduleCodes.push("CS3306");
+        moduleCodes.push("CS3506");
+        moduleCodes.push("CS3506");
+        moduleCodes.push("CS3514");
+        moduleCodes.push("CS3516");
+        moduleCodes.push("CS3519");
+        moduleCodes.push("CS1117");
         assertEquals(8,moduleCodes.getSize());
     }
 
     @Test
     @DisplayName("testing for top item on top of the stack")
     void testingForTopItemOnTopOfTheStack() {
-        fail("not implemented");
+        testingForPushMethod();
+        System.out.println();
+        assertEquals("CS1117", moduleCodes.top());
     }
 }
