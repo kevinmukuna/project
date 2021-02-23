@@ -1,28 +1,23 @@
+package simulator;
+
 /**
- * this is a stack class that delegate a stack elements, which consist of values passed and the next value,
- * the class pushes new items to the top of stack and
- * the class pop from the top of the stack, meaning the last entry is the first to come out and first entry is the
- * last to come out
- * @param <T> the T stands for type
+ * This is a stack class that delegate a stack elements, which consist of values passed and the next value,<br>
+ * the class pushes new items to the top of stack and the class pop from the top of the stack, meaning the <br>
+ * last entry is the first to come out and first entry is the last to come out
+ * @author Kevin Mukuna <br> This is part of C3306 assigment 1 by Marc Van Dongen 2020/2021 this modules and assignement
+ * was designed to get us familiar with some of the tools and version control used in work placement fields *
+ * @param <T> The type of value stored in the stack
  */
 public class Stack<T> implements StackInterface<T>{
-    /**
-     * @see #size --> this referes to the size of the stack. it initiated to zero upon creation.
-     * @see StackElement --> this holds the stack of whatever object we decide to pass into the array.
-     * @see Stack --> the constructor is used for initialisation of an empty stack.
-     * @see #push(T Object) --> this method takes a value/object of type T and pushes it  ot the top of the stack.
-     * @see #pop() --> pops the items on the top of the stack and the previous item becomes the item on top.
-     * @see #top() --> returns the item on top of the stack, the most recently pushed item.
-     * @see #init() --> this method calls in the constructor which then initialises the stack.
-     * @see #show() --> this method prints each item in a new line, till the stack is empty.
-     * @see #isStackEmpty() --> returns a bool if the stack is empty or not.
-     * @see #errorMesage() --> this is used to return an exception when an unexpected execution is  requested.
-     * @see #getSize() --> returns the size of the stack.
-     */
+
     private int size;
     StackElement<T> top;
 
     // ----------------------------stack functional method----------------------------
+
+    /**
+     * initialises the stack
+     */
     public Stack() {
         size = -1;
         top = null;
@@ -98,7 +93,7 @@ public class Stack<T> implements StackInterface<T>{
      * @return an error message
      */
     public T errorMesage (){
-        return (T) "Sorry Stack is Empty";
+        return (T) "Sorry simulator.Stack is Empty";
     }
 
     /**

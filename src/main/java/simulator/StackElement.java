@@ -1,11 +1,13 @@
+package simulator;
+
 /**
- * the purpose of this class is to delegate to the element, so as in to able to create multiple types,premitive type
- * without the need to change the whole code over and over again --> this class is generic of type T
- * @Author Kevin Mukuna
+ * The purpose of this class is to delegate to the element, so as in to able to create multiple types,primitive type
+ * without the need to change the whole code over and over again, this class is generic of type T
+ * @author Kevin Mukuna <br> This is part of C3306 assigment 1 by Marc Van Dongen 2020/2021 this modules and assignement
+ * was designed to get us familiar with some of the tools and version control used in work placement fields
  * @param <T>, the type of the value being stored in the stack
  */
 public class StackElement<T> {
-
     T valuePassed;
     StackElement<T> nextValue;
 
