@@ -73,6 +73,13 @@ public class TestStack {
     @Test
     @DisplayName("testing for top and pop when the stack has been emptied")
     void testingForTopAndPopWhenTheStackHasBeenEmptied() {
-        fail("not implemented");
+        testingForPushMethod();
+        while(moduleCodes.top != null){
+            moduleCodes.pop();
+        }
+        assertAll(
+                ()-> assertEquals("Sorry Stack is Empty",moduleCodes.top()),
+                ()-> assertEquals("Sorry Stack is Empty",moduleCodes.pop())
+        );
     }
 }
