@@ -57,6 +57,7 @@ public class TestStack {
     @Test
     @DisplayName("testing to ensure that error message when a call does not meet requirement")
     void testingToEnsureThatErrorMessageWhenACallDoesNotMeetRequirement() {
-        fail("not implemented");
+       moduleCodes.pop();
+       moduleCodes.top();
     }
 }
