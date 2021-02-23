@@ -43,7 +43,7 @@ public class Stack<T> implements StackInterface<T>{
      */
     public T pop() {
         StackElement<T> previousTop = top;
-        if (isStackEmpty()){
+        if ( isStackEmpty() || top == null ){
             return errorMesage();
         }
         top = top.getnext();
@@ -56,7 +56,7 @@ public class Stack<T> implements StackInterface<T>{
      */
     public T top() {
 
-        if (isStackEmpty()){
+        if ( isStackEmpty() || top == null ){
             return errorMesage();
         }
         return top.getvalue();
