@@ -38,6 +38,14 @@ public class TestStack {
     @Test
     @DisplayName("tseting for push method")
     void tsetingForPushMethod() {
-        fail("not implemented");
+        moduleCodes.push("CS3305 ");
+        moduleCodes.push("CS3306 ");
+        moduleCodes.push("CS3506 ");
+        moduleCodes.push("CS3506 ");
+        moduleCodes.push("CS3514 ");
+        moduleCodes.push("CS3516 ");
+        moduleCodes.push("CS3519 ");
+        moduleCodes.push("CS1117 ");
+        assertEquals(8,moduleCodes.getSize());
     }
 }
