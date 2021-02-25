@@ -56,7 +56,7 @@ public class Stack<E> {
     boolean isEmpty() {
         return top <= 0;
     }
-
+    @SuppressWarnings("unchecked")
     public E errorMessage (){
         return (E) "Sorry Stack is Empty";
     }
