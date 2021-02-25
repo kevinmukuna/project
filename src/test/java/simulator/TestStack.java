@@ -34,7 +34,7 @@ public class TestStack {
    @DisplayName("testing the init method")
    void testingTheInitMethod() {
        moduleCodes.init();
-       assertTrue(moduleCodes.isStackEmpty());
+       assertTrue(moduleCodes.isEmpty());
    }
    @Test
    @DisplayName("get the current size of the stack")
@@ -65,7 +65,7 @@ public class TestStack {
    void testingForTopItemOnTopOfTheStack() {
        testingForPushMethod();
        System.out.println();
-       assertEquals("CS1117", moduleCodes.top());
+       assertEquals("CS1117", moduleCodes.peek());
    }
 
    @Test
@@ -73,7 +73,7 @@ public class TestStack {
    void testingForThePOPFunctionality() {
        testingForPushMethod();
        moduleCodes.pop();
-       assertEquals("CS3519", moduleCodes.top());
+       assertEquals("CS3519", moduleCodes.peek());
    }
 
    @Test
@@ -87,19 +87,19 @@ public class TestStack {
    @DisplayName("testing to ensure that error message when a call does not meet requirement")
    void testingToEnsureThatErrorMessageWhenACallDoesNotMeetRequirement() {
       moduleCodes.pop();
-      moduleCodes.top();
+      moduleCodes.peek();
    }
 
    @Test
    @DisplayName("testing for top and pop when the stack has been emptied")
    void testingForTopAndPopWhenTheStackHasBeenEmptied() {
        testingForPushMethod();
-       while(moduleCodes.top != null){
+       while(!moduleCodes.isEmpty()){
            moduleCodes.pop();
        }
        assertAll(
-               ()-> assertEquals("Sorry simulator.Stack is Empty",moduleCodes.top()),
-               ()-> assertEquals("Sorry simulator.Stack is Empty",moduleCodes.pop())
+               ()-> assertEquals("Sorry Stack is Empty",moduleCodes.peek()),
+               ()-> assertEquals("Sorry Stack is Empty",moduleCodes.pop())
        );
    }
 }
