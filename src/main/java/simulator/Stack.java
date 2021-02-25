@@ -14,6 +14,10 @@ import java.util.List;
 // import stack.exception.StackFullException;
 
 public class Stack<E> {
+    /**
+     * @see #top --> this referes to the size of the stack. it initiated to zero upon creation.
+     * @see #items --> this holds the stack of whatever object we decide to pass into the array.
+     */
 
     private List<E> items;
     private int top;
@@ -23,10 +27,17 @@ public class Stack<E> {
         items = new ArrayList<E>();
      }
 
+    /**
+     * this method takes a value/object of type T and pushes it  ot the top of the stack.
+     * @param e the value being pushed to the top of the stack
+     */
     public void push(E e) {
         items.add(top++, e);
     }
-
+    /**
+     * pops the items on the top of the stack and the previous item becomes the item on top.
+     * @return delete the top of the stack
+     */
     public E pop() {
         if (isEmpty()) {
             return errorMessage();
@@ -35,7 +46,10 @@ public class Stack<E> {
 
 
     }
-
+    /**
+     * returns the item on top of the stack, the most recently pushed item.
+     * @return the top of the stack
+     */
     public E peek()  {
         if (isEmpty()) {
             return errorMessage();
@@ -46,6 +60,10 @@ public class Stack<E> {
 
     }
 
+    /**
+     *  this method prints each item in a new line, till the stack is empty.
+     *  makes a copy of the stack and prints out items one by one as long as it has nextvalue
+     */
     public void show() {
         System.out.println("Stack elements:");
         for (E e : items) {
@@ -53,17 +71,35 @@ public class Stack<E> {
         }
     }
 
+    /**
+     * returns a bool if the stack is empty or not.
+     * @return bool true or false on whether the stack is empty or not
+     */
     boolean isEmpty() {
         return top <= 0;
     }
+
+    /**
+     * this is used to return an exception when an unexpected execution is  requested
+     * @return an error message
+     */
     @SuppressWarnings("unchecked")
     public E errorMessage (){
         return (E) "Sorry Stack is Empty";
     }
 
+    /**
+     * this method calls in the constructor which then initialises the stack.
+     * initialisation of the stack method
+     */
     public void init(){
         new Stack<>();
     }
+
+    /**
+     * returns the size of the stack
+     * @return size of the stack
+     */
     public int getSize(){
         return items.size();
     }
