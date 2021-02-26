@@ -93,6 +93,9 @@ public class Stack<E> {
      * initialisation of the stack method
      */
     public void init(){
+        while(!isEmpty()){
+            pop();
+        }
         new Stack<>();
     }
 
