@@ -8,30 +8,56 @@ package simulator;
  */
 public class Simulator {
     public static void main(String[] args) {
-        Stack<Integer> customStack = new Stack<Integer>();
+        Stack<String> customStack = new Stack<>();
 
-        customStack.push(5);
-        customStack.push(6);
-        customStack.push(7);
-        customStack.show();
-        customStack.pop();
-        customStack.show();
-        customStack.push(7);
-        customStack.push(8);
-        customStack.push(9);
-        customStack.show();
-        customStack.pop();
-        customStack.show();
-        customStack.pop();
-        customStack.pop();
-        customStack.pop();
-        customStack.show();
-        customStack.push(10);
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("init")) {
+                customStack = new Stack<>();
+                customStack.init();
+            } else {
+                switch (args[i]) {
+                    case "push":
+                        customStack.push(args[i + 1]);
+                        i++;
+                        break;
+                    case "pop":
+                        customStack.pop();
+                        break;
+                    case "peek":
+                        customStack.peek();
+                        break;
+                    default:
+                        if (args[i].equals("show")) {
+                            customStack.show();
+                        }
+                        break;
+                }
 
-        System.out.println("latest element:" + customStack.peek());
-        customStack.show();
-        customStack.pop();
-        customStack.pop();
+            }
+        }
+
+//        customStack.push(5);
+//        customStack.push(6);
+//        customStack.push(7);
+//        customStack.show();
+//        customStack.pop();
+//        customStack.show();
+//        customStack.push(7);
+//        customStack.push(8);
+//        customStack.push(9);
+//        customStack.show();
+//        customStack.pop();
+//        customStack.show();
+//        customStack.pop();
+//        customStack.pop();
+//        customStack.pop();
+//        customStack.show();
+//        customStack.push(10);
+//
+//        System.out.println("latest element:" + customStack.peek());
+//        customStack.show();
+//        customStack.pop();
+//        customStack.pop();
 
      }
 }
