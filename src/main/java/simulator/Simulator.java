@@ -9,6 +9,7 @@ package simulator;
 public class Simulator {
     public static void main(String[] args) {
         Stack<String> customStack = new Stack<>();
+        // Stack<Integer> customStack = new Stack<>();
 
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("init")) {
@@ -36,28 +37,28 @@ public class Simulator {
             }
         }
 
-//        customStack.push(5);
-//        customStack.push(6);
-//        customStack.push(7);
-//        customStack.show();
-//        customStack.pop();
-//        customStack.show();
-//        customStack.push(7);
-//        customStack.push(8);
-//        customStack.push(9);
-//        customStack.show();
-//        customStack.pop();
-//        customStack.show();
-//        customStack.pop();
-//        customStack.pop();
-//        customStack.pop();
-//        customStack.show();
-//        customStack.push(10);
-//
-//        System.out.println("latest element:" + customStack.peek());
-//        customStack.show();
-//        customStack.pop();
-//        customStack.pop();
+       // customStack.push(5);
+       // customStack.push(6);
+       // customStack.push(7);
+       // customStack.show();
+       // customStack.pop();
+       // customStack.show();
+       // customStack.push(7);
+       // customStack.push(8);
+       // customStack.push(9);
+       // customStack.show();
+       // customStack.pop();
+       // customStack.show();
+       // customStack.pop();
+       // customStack.pop();
+       // customStack.pop();
+       // customStack.show();
+       // customStack.push(10);
+
+       // System.out.println("latest element:" + customStack.peek());
+       // customStack.show();
+       // customStack.pop();
+       // customStack.pop();
 
      }
 }

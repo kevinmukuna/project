@@ -13,7 +13,7 @@
     <property name="test.dir" value="${build.dir}/test"/>
     <property name="main-class" value="simulator.Simulator"/>
     <property name="test-class" value="simulator.TestRunner"/>
-    <property name="deploy.dir" value="${build.dir}simulatorApp"/>
+    <property name="deploy.dir" value="${build.dir}/simulatorApp"/>
 
     <property name="url" value="http://localhost:8080/manager/text"/>
     <property name="username" value="tomcat"/>
@@ -29,12 +29,9 @@
 
     <!-- THIS target IS USED TO MAKING DIRECTORY IN WHICH OUT JAR AND CLASSES ARE STORED IN   -->
     <target name="init" depends="clean">
-        <!-- Create the build directory structure used by compile -->
         <mkdir dir="${build.dir}"/>
         <mkdir dir="${doc.dir}"/>
-        <mkdir dir="${web.dir}"/>
         <mkdir dir="${deploy.dir}"/>
-        <!-- <fileset dir="./simulator.war" /> -->
     </target>
 
     <!-- THIS  target IS USED TO INCLUDE THE JAR FILES NEEDED FOR TEH JUNIT AND OTHER PATH FOR OTHER targets   -->
@@ -97,17 +94,11 @@
          <java classpathref="classpath" classname="${test-class}" fork="true"/>
     </target>
 
-    <!-- THIS target DEPLOYS THE APPLICATION -->
-    <target name="deploy" description="Deploy application">
-        <copy file="simulator.war" todir="${deploy.dir}"/>
-    </target>
-
     <target name="deploywar" depends="compile" description="Deploy application as a WAR file">
-       <war warfile="simulator.war" needxmlfile="false">
+       <war warfile="${deploy.dir}/simulator.war" needxmlfile="false">
            <fileset dir="${src.dir}"/>
        </war>
-        <antcall target="deploy"/>
-    </target>
+     </target>
 
 
     <!-- THIS target IS THE DEFAULT TARGET RAN WHEN EXECUTED IN THE ANT WITHOUT A TARGET   -->
