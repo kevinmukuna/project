@@ -81,7 +81,7 @@
 
 
     <!--THIS target RUNS AND EXECUTE THE JAR FILE-->
-    <target name="run" depends="jar">
+    <target name="run" depends="jar" >
         <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
     </target>
 
@@ -102,6 +102,6 @@
 
 
     <!-- THIS target IS THE DEFAULT TARGET RAN WHEN EXECUTED IN THE ANT WITHOUT A TARGET   -->
-    <target name="main" depends="run, test, doc, deploywar"/>
-
+    <target name="main" depends="run, test, doc, deploywar" />
+        
 </project>

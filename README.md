@@ -102,3 +102,5 @@ for better viewing of the following file please view it an IDE or an application
 >> - java -cp . simulator/Simulator
 >>> run it one liner
 >>>> cd src/main/java/simulator  && javac -d . *.java && java -cp . simulator/Simulator
+>>>> or just run this (./.simulator.sh args) and replace args with argument. this build and runs the script at the same time
+>>>>> ./.simulator.sh push 1 push 2 push push show
