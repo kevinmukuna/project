@@ -50,6 +50,7 @@
         moduleCodes.init();
         assertTrue(moduleCodes.isEmpty());
     }
+
     @Test
     @DisplayName("get the current size of the stack")
     void getTheCurrentSizeOfTheStack() {

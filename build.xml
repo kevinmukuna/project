@@ -13,8 +13,11 @@
     <property name="test.dir" value="${build.dir}/test"/>
     <property name="main-class" value="simulator.Simulator"/>
     <property name="test-class" value="simulator.TestRunner"/>
-    <property name="deploy.dir" value="simulatorApp"/>
+    <property name="deploy.dir" value="${build.dir}simulatorApp"/>
 
+    <property name="url" value="http://localhost:8080/manager/text"/>
+    <property name="username" value="tomcat"/>
+    <property name="password" value="tomcat"/>
 
     <!-- THIS target IS THE FIRST THING THAT IS RAN, IT CLEANS AND DELETE THE DIR MENTION BELOW TO ALLOW CLEAN BUILD -->
     <target name="clean">
@@ -25,14 +28,13 @@
     </target>
 
     <!-- THIS target IS USED TO MAKING DIRECTORY IN WHICH OUT JAR AND CLASSES ARE STORED IN   -->
-    <target name="init">
-        <!-- Create the time stamp -->
-        <tstamp/>
+    <target name="init" depends="clean">
         <!-- Create the build directory structure used by compile -->
         <mkdir dir="${build.dir}"/>
         <mkdir dir="${doc.dir}"/>
         <mkdir dir="${web.dir}"/>
         <mkdir dir="${deploy.dir}"/>
+        <!-- <fileset dir="./simulator.war" /> -->
     </target>
 
     <!-- THIS  target IS USED TO INCLUDE THE JAR FILES NEEDED FOR TEH JUNIT AND OTHER PATH FOR OTHER targets   -->
@@ -46,6 +48,10 @@
         </path>
         <path location="${classes.dir}"/>
     </path>
+
+    <!-- Configure the folder and context path for this application -->
+    <taskdef resource="org/apache/catalina/ant/catalina.tasks"
+             classpathref="classpath"/>
 
     <!--THIS target IS USED FOR COMPILING CLASSES AND STORING THEM IN THE DIR CLASS ONLY IF init target is SUCCESSFUL-->
     <target name="compile" depends="init"
@@ -61,6 +67,7 @@
             <fileset dir="."/>
         </javadoc>
     </target>
+
     <!-- THIS target IS USED CREATING THE JAR FILES AND IT EXECUTES THE MAIN CLASS IN THE MANIFEST IF compiled-->
     <target name="jar" depends="compile"
             description="generate the jar file">
@@ -84,16 +91,15 @@
     <!-- THIS target IS USED FOR CLEAN BUILDING AND IT DEPENDS ON THE BELOW  -->
     <target name="clean-build" depends="clean,jar"/>
 
-    <!-- THIS target IS THE DEFAULT TARGET RAN WHEN EXECUTED IN THE ANT WITHOUT A TARGET   -->
-    <target name="main" depends="run, test, doc, deploywar"/>
 
     <!-- THIS IS THE JUNIT target, IT RUNS THE UNIT TEST -->
     <target name = "test" >
          <java classpathref="classpath" classname="${test-class}" fork="true"/>
     </target>
 
-    <target name="deploy" depends="compile" description="Deploy application">
-        <copy file="./simulator.war" todir="${deploy.dir}"/>
+    <!-- THIS target DEPLOYS THE APPLICATION -->
+    <target name="deploy" description="Deploy application">
+        <copy file="simulator.war" todir="${deploy.dir}"/>
     </target>
 
     <target name="deploywar" depends="compile" description="Deploy application as a WAR file">
@@ -104,5 +110,7 @@
     </target>
 
 
+    <!-- THIS target IS THE DEFAULT TARGET RAN WHEN EXECUTED IN THE ANT WITHOUT A TARGET   -->
+    <target name="main" depends="run, test, doc, deploywar"/>
 
 </project>
