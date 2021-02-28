@@ -25,6 +25,7 @@
         <delete dir="documentation"/>
         <delete dir="${deploy.dir}"/>
         <delete file="simulator.war"/>
+        <delete dir="${src.dir}/main/java/simulator/simulator"/>
     </target>
 
     <!-- THIS target IS USED TO MAKING DIRECTORY IN WHICH OUT JAR AND CLASSES ARE STORED IN   -->
