@@ -6,3 +6,5 @@ ant main
 cd src/main/java/simulator  && javac -d . *.java && java -cp . simulator/Simulator $*
 cd 
 exit
+
+# you could do better
