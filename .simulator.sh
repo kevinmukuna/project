@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function_check_args () {
+function function_check_args () {
   java --version 
    if [ $? -eq 0 ]; then
        ant --version 
