@@ -94,7 +94,7 @@ for better viewing of the following file please view it an IDE or an application
 > >>> - isEmpty() returns a bool if the stack is empty or not.
 > >>> - getSize() returns the size of the stack
 > >>> - errorMessage() handles errors
-
+>>>>>>>>>>>>>>>
 
 > flow of execution to test the simulator from top dir
 >> - cd src/main/java/simulator 
