@@ -81,6 +81,7 @@ for better viewing of the following file please view it an IDE or an application
 
 
 #AOB 
+>>>>>>>>>>>>>>>>
 
 > This project implements a simulator for a stack(please view this file in ide or web to see it effectiveness)
 > > The class stack is of generic type and implements delegation
