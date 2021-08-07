@@ -1,5 +1,5 @@
 #Simple Simulator For a Stack
-for better viewing of the following file please view it an IDE or an application with .md
+for better viewing of the following file please view it in an IDE or an application with .md
 
 #DIRECTORY STRUCTURE 
 
