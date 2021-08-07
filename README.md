@@ -54,7 +54,7 @@ for better viewing of the following file please view it in an IDE or an applicat
 
 #BUILD COMMANDS FROM THE TOP OF THE DIR
 
-        - explanation of the commands in the descending order 
+        - explanation of the commands in descending order 
           - ant -> runs the default method which is main and main runs all the target within the build file
           - ant clean -> clean deletes dirs for a clean build
           - ant init -> creates the file and dir needed for the build
